@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+.container {
+  font-family: "Open Sans";
+}
+
+.btn {
+  font-family: "Poppins";
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=styles.css.map */

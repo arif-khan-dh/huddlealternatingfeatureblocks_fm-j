@@ -1,0 +1,23 @@
+@use './1-abstracts/functions' as fu;
+
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}

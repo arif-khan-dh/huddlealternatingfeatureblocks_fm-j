@@ -1,0 +1,17 @@
+@use './1-abstracts/fonts' as fo;
+
+.container {
+    font-family: fo.$font-opensans;
+}
+
+.btn {
+    font-family: fo.$font-poppins;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+
+    // debug
+    color: black;
+}
