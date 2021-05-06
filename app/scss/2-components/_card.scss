@@ -1,0 +1,7 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.card {
+    border-radius: fu.toRem(16px);
+    box-shadow: 0 0 fu.toRem(10px) 0 rgba($color: c.$grayishBlue, $alpha: 0.3);
+}

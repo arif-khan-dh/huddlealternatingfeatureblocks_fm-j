@@ -1,0 +1,33 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+.hero {
+    // height: fu.toRem(680px);
+    width: var(--container-width);
+    padding: 0 0 fu.toRem(36px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .cta {
+        padding: 0 fu.toRem(36px);
+    }
+
+    .headline {
+        padding-top: fu.toRem(80px);
+    }
+
+    .para {
+        padding-top: fu.toRem(28px);
+    }
+
+    button {
+        // width: 70%;
+        margin-top: fu.toRem(30px);
+    }
+
+    .illustration {
+        padding-top: fu.toRem(56px);
+        width: 87%;
+    }
+}

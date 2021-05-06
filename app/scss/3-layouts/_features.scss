@@ -1,0 +1,31 @@
+@use '../1-abstracts/functions' as fu;
+
+.features {
+    padding-top: fu.toRem(58px);
+    width: 99%;
+
+    .feature {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        height: fu.toRem(492px);
+
+        &:not(:first-child) {
+            margin-top: fu.toRem(32px);
+        }
+    }
+
+    .illustration {
+        width: 71%;
+        margin: auto 0 0;
+    }
+
+    .text {
+        padding-top: fu.toRem(58px);
+        padding-bottom: fu.toRem(36px);
+
+        .para {
+            padding: fu.toRem(18px) fu.toRem(40px) 0;
+        }
+    }
+}

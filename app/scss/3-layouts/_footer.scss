@@ -1,0 +1,147 @@
+@use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/colors' as c;
+
+footer {
+    // margin-top: fu.toRem(118px);
+    margin-top: fu.toRem(230px);
+    background-color: c.$veryDarkCyan;
+
+
+    .footer {
+        width: var(--container-width);
+        margin-top: calc(-1 * #{fu.toRem(68px)});
+        padding: fu.toRem(136px) fu.toRem(5px) fu.toRem(50px);
+        
+
+        .logo {
+            width: 48%;
+            height: auto;
+
+            svg {
+                path {
+                    fill: white;
+                }
+            }
+        }
+
+        .sub-logo {
+            display: flex;
+            flex-flow: column nowrap;
+            // align-items: center;
+        }
+        
+        .info {
+            padding-top: fu.toRem(26px);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: fu.toRem(26px);
+            align-items: center;
+            
+
+            .icon {
+                width: 1rem;
+
+                &:first-of-type{
+                    align-self: start;
+                    justify-self: center;
+                }
+            }
+        }
+
+        .links {
+            padding-top: fu.toRem(38px);
+            display: flex;
+            flex-flow: column nowrap;
+
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                padding-top: fu.toRem(28px);
+
+                a {
+                    position: relative;
+    
+                    &::after {
+                        content: "";    
+                        background-color: white;
+                        position: absolute;
+                        left: 0;
+                        top: 100%;
+                        width: 100%;
+                        height: 1px;
+                        opacity: 0;
+                        transition: opacity var(--transition) ease-in-out;
+                    }
+    
+                    &:hover::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .socials {
+            padding-top: fu.toRem(56px);
+            margin: 0 auto;
+            width: 33%;
+            display: flex;
+            justify-content: space-between;
+
+            .icon {
+                --d: #{fu.toRem(28px)};
+                width: var(--d);
+                height: var(--d);
+                border: fu.toRem(1px) solid white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: border-color var(--transition) ease-in-out;
+                position: relative;
+                cursor: pointer;
+
+                &:hover {
+                    border-color: c.$grayishBlue;
+
+                    svg path {
+                        fill: c.$grayishBlue;
+                    }
+
+                    .tooltip {
+                        opacity: 1;
+                    }
+                }
+
+                .tooltip {
+                    position: absolute;
+                    // bottom: 110%;
+                    top: -120%;
+                    opacity: 0;
+                    background-color: c.$veryDarkCyan-v1;
+                    border-radius: fu.toRem(5px);
+                    padding: fu.toRem(5px);
+                    transition: opacity var(--transition) ease-in-out;
+                }
+
+                svg {
+                    width: 50%;
+                    height: 50%;
+
+                    path {
+                        transition: fill var(--transition) ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .copyright {
+            padding-top: fu.toRem(22px);
+        }
+    }
+
+}

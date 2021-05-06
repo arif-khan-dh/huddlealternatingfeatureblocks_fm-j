@@ -1,0 +1,14 @@
+@use '../1-abstracts/functions' as fu;
+
+.subscription {
+    margin-top: calc(-1 * #{fu.toRem(112px)});
+    width: var(--container-width);
+    padding: fu.toRem(44px) 0;
+    position: relative;
+    background-color: white;
+
+    button {
+        width: 57%;
+        margin-top: fu.toRem(24px);
+    }
+}

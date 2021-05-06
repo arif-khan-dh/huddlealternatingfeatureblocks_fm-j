@@ -1,17 +1,118 @@
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+.logo {
+  width: 30%;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  box-shadow: 0px 0px 0.625rem 0px rgba(128, 141, 153, 0.3);
+}
+button.try {
+  width: 6.25rem;
+  background-color: white;
+  transition: box-shadow var(--transition) ease-in-out, color var(--transition) ease-in-out;
+}
+button.try:hover {
+  box-shadow: 0px 0px 1rem 0px rgba(128, 141, 153, 0.6);
+}
+button.primary {
+  width: 70%;
+  height: 2.5rem;
+  background-color: #ff52bf;
+  transition: filter var(--transition) ease-in-out;
+}
+button.primary:hover {
+  filter: brightness(1.4);
+}
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 0 0.625rem 0 rgba(128, 141, 153, 0.3);
+}
+
+:root {
+  --mb-h1: 1.5rem;
+  --mb-h2: 1.25rem;
+  --mb-h3: 1.125rem;
+}
+
 .container {
   font-family: "Open Sans";
 }
 
-.btn {
+button {
   font-family: "Poppins";
+}
+button.try {
+  font-size: 0.75rem;
 }
 
 a {
   cursor: pointer;
   text-decoration: none;
   color: black;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins";
+}
+
+.container {
+  text-align: center;
+  color: #00252e;
+}
+
+button.try:hover {
+  color: rgba(0, 0, 0, 0.7);
+}
+button.primary {
+  color: white;
+  font-size: 0.75rem;
+}
+
+.hero .headline {
+  font-size: var(--mb-h1);
+  line-height: 1.5em;
+}
+.hero .para {
+  font-size: 0.875rem;
+  line-height: 1.6em;
+}
+
+.feature .headline {
+  font-size: var(--mb-h2);
+}
+.feature .para {
+  font-size: 0.875rem;
+  line-height: 1.6em;
+  color: #808d99;
+}
+
+.subscription .headline {
+  font-size: var(--mb-h3);
+}
+
+.footer {
+  color: white;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+ul a {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+}
+
+.tooltip {
+  font-size: 0.75rem;
 }
 
 html {
@@ -23,10 +124,243 @@ html {
   box-sizing: inherit;
 }
 
+:root {
+  --container-width: 95%;
+  --transition: 200ms;
+}
+
 body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: var(--container-width);
+  min-width: 21.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.wrapper {
+  width: calc(100vw - 17px);
+  min-width: 23.4375rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.hero-bg-wrapper {
+  background: url(../../images/bg-hero-mobile.svg) top left/contain no-repeat rgba(235, 251, 255, 0.8);
+}
+
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+h1, h2, h3, p, button {
+  margin: 0;
+  padding: 0;
+}
+
+img, svg {
+  display: block;
+}
+
+div svg {
+  width: 100%;
+  height: 100%;
+}
+
+.illustration img, .icon img {
+  width: 100%;
+}
+
+header {
+  width: var(--container-width);
+  padding-top: 1.375rem;
+  display: flex;
+  justify-content: space-between;
+  height: 3.125rem;
+}
+
+.hero {
+  width: var(--container-width);
+  padding: 0 0 2.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.hero .cta {
+  padding: 0 2.25rem;
+}
+.hero .headline {
+  padding-top: 5rem;
+}
+.hero .para {
+  padding-top: 1.75rem;
+}
+.hero button {
+  margin-top: 1.875rem;
+}
+.hero .illustration {
+  padding-top: 3.5rem;
+  width: 87%;
+}
+
+.features {
+  padding-top: 3.625rem;
+  width: 99%;
+}
+.features .feature {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: 30.75rem;
+}
+.features .feature:not(:first-child) {
+  margin-top: 2rem;
+}
+.features .illustration {
+  width: 71%;
+  margin: auto 0 0;
+}
+.features .text {
+  padding-top: 3.625rem;
+  padding-bottom: 2.25rem;
+}
+.features .text .para {
+  padding: 1.125rem 2.5rem 0;
+}
+
+footer {
+  margin-top: 14.375rem;
+  background-color: #00252e;
+}
+footer .footer {
+  width: var(--container-width);
+  margin-top: calc(-1 * 4.25rem);
+  padding: 8.5rem 0.3125rem 3.125rem;
+}
+footer .footer .logo {
+  width: 48%;
+  height: auto;
+}
+footer .footer .logo svg path {
+  fill: white;
+}
+footer .footer .sub-logo {
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer .footer .info {
+  padding-top: 1.625rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.625rem;
+  align-items: center;
+}
+footer .footer .info .icon {
+  width: 1rem;
+}
+footer .footer .info .icon:first-of-type {
+  align-self: start;
+  justify-self: center;
+}
+footer .footer .links {
+  padding-top: 2.375rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+footer .footer .links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer .footer .links li {
+  padding-top: 1.75rem;
+}
+footer .footer .links li a {
+  position: relative;
+}
+footer .footer .links li a::after {
+  content: "";
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 1px;
+  opacity: 0;
+  transition: opacity var(--transition) ease-in-out;
+}
+footer .footer .links li a:hover::after {
+  opacity: 1;
+}
+footer .footer .socials {
+  padding-top: 3.5rem;
+  margin: 0 auto;
+  width: 33%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer .socials .icon {
+  --d: 1.75rem;
+  width: var(--d);
+  height: var(--d);
+  border: 0.0625rem solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: border-color var(--transition) ease-in-out;
+  position: relative;
+  cursor: pointer;
+}
+footer .footer .socials .icon:hover {
+  border-color: #808d99;
+}
+footer .footer .socials .icon:hover svg path {
+  fill: #808d99;
+}
+footer .footer .socials .icon:hover .tooltip {
+  opacity: 1;
+}
+footer .footer .socials .icon .tooltip {
+  position: absolute;
+  top: -120%;
+  opacity: 0;
+  background-color: #004152;
+  border-radius: 0.3125rem;
+  padding: 0.3125rem;
+  transition: opacity var(--transition) ease-in-out;
+}
+footer .footer .socials .icon svg {
+  width: 50%;
+  height: 50%;
+}
+footer .footer .socials .icon svg path {
+  transition: fill var(--transition) ease-in-out;
+}
+footer .footer .copyright {
+  padding-top: 1.375rem;
+}
+
+.subscription {
+  margin-top: calc(-1 * 7rem);
+  width: var(--container-width);
+  padding: 2.75rem 0;
+  position: relative;
+  background-color: white;
+}
+.subscription button {
+  width: 57%;
+  margin-top: 1.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

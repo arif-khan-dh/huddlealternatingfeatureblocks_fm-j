@@ -1,11 +1,22 @@
 @use './1-abstracts/fonts' as fo;
+@use './1-abstracts/colors' as c;
+
+:root {
+    --mb-h1: #{fo.$size-xlg};
+    --mb-h2: #{fo.$size-lg};
+    --mb-h3: #{fo.$size-md};
+}
 
 .container {
     font-family: fo.$font-opensans;
 }
 
-.btn {
+button {
     font-family: fo.$font-poppins;
+
+    &.try {
+        font-size: fo.$size-xxsm;
+    }
 }
 
 a {
@@ -14,4 +25,81 @@ a {
 
     // debug
     color: black;
+}
+
+h1, h2, h3 {
+    font-family: fo.$font-poppins;
+}
+
+.container {
+    text-align: center;
+    color: c.$veryDarkCyan;
+}
+
+button {
+
+    &.try:hover {
+        color: rgba($color: #000000, $alpha: 0.7);
+    }
+
+    &.primary {
+        color: white;
+        font-size: fo.$size-xxsm;
+    }
+}
+
+
+.hero {    
+
+    .headline {
+        // font-size: fo.$size-xlg; // h1
+        font-size: var(--mb-h1); // h1
+        line-height: 1.5em;
+    }
+
+    .para {
+        font-size: fo.$size-xsm;
+        line-height: 1.6em;
+    }
+}
+
+.feature {
+
+    .headline {
+        font-size: var(--mb-h2); // h2
+    }
+
+    .para {
+        font-size: fo.$size-xsm;
+        line-height: 1.6em;
+        color: c.$grayishBlue;
+    }
+}
+
+.subscription {
+
+    .headline {
+        font-size: var(--mb-h3); // h3
+    }
+}
+
+.footer {
+    color: white;
+    text-align: left;
+    font-size: fo.$size-xsm;
+}
+
+ul {
+
+    a{
+        color: white;
+    }    
+}
+
+.copyright {
+    text-align: center;
+}
+
+.tooltip {
+    font-size: fo.$size-xxsm;
 }

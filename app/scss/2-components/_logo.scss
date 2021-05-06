@@ -1,0 +1,7 @@
+@use '../1-abstracts/functions' as fu;
+
+.logo {
+    width: 30%;
+    height: fu.toRem(20px);
+    cursor: pointer;
+}
