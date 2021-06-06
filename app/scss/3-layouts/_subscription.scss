@@ -1,14 +1,26 @@
 @use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/mixins' as m;
 
 .subscription {
     margin-top: calc(-1 * #{fu.toRem(112px)});
-    width: var(--container-width);
+    width: var(--container-width);    
+    // max-width: fu.toRem(460px);
+    max-width: fu.toRem(447px);
     padding: fu.toRem(44px) 0;
     position: relative;
     background-color: white;
 
+    @include m.breakpoint-up(large) {
+        width: 63%;
+        max-width: fu.toRem(626px);
+    }
+
+    // screen minimum 742px
+    // width: 62%;
+
     button {
         width: 57%;
         margin-top: fu.toRem(24px);
+        max-width: fu.toRem(300px);
     }
 }

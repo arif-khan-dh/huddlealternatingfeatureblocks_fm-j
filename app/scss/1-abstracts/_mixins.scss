@@ -3,19 +3,32 @@
 
 // Width of vertical scrollbar is 17px
 $breakpoint-up: (
-    "xxxxxlarge": fu.toRem(1440px),
-    "xxxxlarge": fu.toRem(1160px),
-    "xxxlarge": fu.toRem(1160px),
-    "xxlarge": fu.toRem(1085px),
-    "xlarge": fu.toRem(900px),
+    "xxxxxxxxlarge": fu.toRem(1440px), // 8x
+    "xxxxxxxlarge": fu.toRem(1296px), // 7x
+    "xxxxxxlarge": fu.toRem(1182px),
+    "xxxxxlarge": fu.toRem(1053px), // 5x
+    "xxxxlarge": fu.toRem(988px),
+    "xxxlarge": fu.toRem(923px),
+    "xx1large": fu.toRem(868px),
+    "xxlarge": fu.toRem(793px),
+    "xlarge": fu.toRem(760px),
     "large": fu.toRem(737px),
-    "xmedium": fu.toRem(650px), 
-    "medium": fu.toRem(570px), 
-    "small": fu.toRem(516px)
+    "xxmedium": fu.toRem(653px), 
+    "xmedium": fu.toRem(623px), 
+    "medium": fu.toRem(607px),
+    "medium-small": fu.toRem(551px),
+    "medium-xsmall": fu.toRem(543px),
+    "small": fu.toRem(516px),
+    "xsmall": fu.toRem(375px),
+    
 );
 
 @mixin breakpoint-down ($size) {
-    @media (max-width: map-get($breakpoint-down, $size)){
+    // @media (max-width: map-get($breakpoint-down, $size)){
+    //     @content;
+    // }
+
+    @media (max-width: map-get($breakpoint-up, $size)){
         @content;
     }
 }

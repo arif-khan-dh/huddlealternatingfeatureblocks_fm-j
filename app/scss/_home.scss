@@ -1,8 +1,10 @@
 @use './1-abstracts/functions' as fu;
 @use './1-abstracts/colors' as c;
-
+@use './1-abstracts/mixins' as m;
 @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+
+//  Vertical scroll bar width: 16.8px
 
 html {
     box-sizing: border-box;
@@ -14,8 +16,9 @@ html {
 }
 
 :root {
-    // --container-width: 90%;
     --container-width: 95%;
+    // --container-width: calc(95% - #{fu.toRem(17px)});
+    --wrapper-child-max-width: #{fu.toRem(1230px)};
     --transition: 200ms;
 }
 
@@ -26,18 +29,12 @@ body {
 
     display: flex;
     justify-content: center;
-
-    // background: url(../../images/bg-hero-mobile.svg) top left / contain no-repeat;
-    // background: 
-    //     url(../../images/bg-hero-mobile.svg) top left / 100% 730px no-repeat,
-    //     // linear-gradient(c.$veryPaleCyan 730px, white 730px)
-        
-    // ;
 }
 
 .container {
     width: var(--container-width);
     min-width: fu.toRem(340px);
+    max-width: fu.toRem(1296px);
 
     display: flex;
     flex-flow: column nowrap;
@@ -46,25 +43,18 @@ body {
 
 .wrapper {
     width: calc(100vw - 17px);
-    min-width: fu.toRem(375px);
+    // min-width: fu.toRem(375px);
+    min-width: fu.toRem(340px);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-
 }
 
 .hero-bg-wrapper {
     background: 
-        url(../../images/bg-hero-mobile.svg) top left / contain no-repeat
+        url(../../images/bg-hero-mobile.svg) top left / contain no-repeat,
         hsla(193, 100%, 96%, .8)
-    ;
-    
-}
-
-main {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+    ;    
 }
 
 h1, h2, h3, p, button {

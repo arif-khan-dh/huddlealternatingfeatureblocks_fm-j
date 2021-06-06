@@ -1,33 +1,75 @@
 @use '../1-abstracts/functions' as fu;
 @use '../1-abstracts/colors' as c;
+@use '../1-abstracts/mixins' as m;
 
 .hero {
-    // height: fu.toRem(680px);
     width: var(--container-width);
+    max-width: var(--wrapper-child-max-width);
     padding: 0 0 fu.toRem(36px);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 
+    @include m.breakpoint-up(xlarge) {
+        flex-flow: row nowrap;        
+        justify-content: space-between;
+    }
+
     .cta {
         padding: 0 fu.toRem(36px);
+
+        @include m.breakpoint-up(xlarge) {
+            width: 44%;
+            padding: 0;
+        }
+
+        @include m.breakpoint-up(xxxxlarge) {
+            align-self: start;
+        }
     }
 
     .headline {
         padding-top: fu.toRem(80px);
+
+        @include m.breakpoint-up(medium-small) {
+            margin: 0 auto;
+            width: fu.toRem(435px);
+        }
+
+        @include m.breakpoint-up(xmedium) {
+            width: 100%;
+            margin: 0;
+        }
     }
 
     .para {
         padding-top: fu.toRem(28px);
+
+        @include m.breakpoint-up(medium-small) {
+            margin: 0 auto;
+            width: fu.toRem(450px);
+        }
+
+        @include m.breakpoint-up(xmedium) {
+            width: fu.toRem(524px);
+        }
+
+        @include m.breakpoint-up(xlarge) {
+            width: 100%;
+        }
     }
 
     button {
-        // width: 70%;
         margin-top: fu.toRem(30px);
+        max-width: fu.toRem(256px);
     }
 
     .illustration {
         padding-top: fu.toRem(56px);
         width: 87%;
+
+        @include m.breakpoint-up(xlarge) {
+            width: 50%;
+        }
     }
 }

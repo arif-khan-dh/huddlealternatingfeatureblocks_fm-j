@@ -1,10 +1,26 @@
 @use '../1-abstracts/functions' as fu;
+@use '../1-abstracts/mixins' as m;
 
 header {
     width: var(--container-width);
+    max-width: var(--wrapper-child-max-width);
     padding-top: fu.toRem(22px);
     display: flex;
     justify-content: space-between;
-    // align-items: center;
-    height: fu.toRem(50px);
+
+    @include m.breakpoint-up(xmedium) {
+        padding-top: 4vw;
+    }
+
+    @include m.breakpoint-up(xxxxxxxlarge) {
+        padding-top: fu.toRem(64px);
+    }
+
+
+    .logo {
+        // height: 5vmin;
+        height: 3vw;
+        max-height: fu.toRem(39px);
+        max-width: fu.toRem(240px);
+    }
 }

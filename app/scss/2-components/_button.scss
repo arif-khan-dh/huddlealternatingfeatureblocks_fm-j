@@ -9,7 +9,6 @@ button {
     
     &.try{
         width: fu.toRem(100px);
-        // height: fu.toRem(26px);
         background-color: white;
         transition: box-shadow var(--transition) ease-in-out,
             color var(--transition) ease-in-out;

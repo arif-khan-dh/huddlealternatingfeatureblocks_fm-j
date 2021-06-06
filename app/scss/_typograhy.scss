@@ -1,14 +1,12 @@
 @use './1-abstracts/fonts' as fo;
 @use './1-abstracts/colors' as c;
+@use  './1-abstracts/mixins' as m;
 
 :root {
     --mb-h1: #{fo.$size-xlg};
     --mb-h2: #{fo.$size-lg};
     --mb-h3: #{fo.$size-md};
-}
 
-.container {
-    font-family: fo.$font-opensans;
 }
 
 button {
@@ -22,9 +20,6 @@ button {
 a {
     cursor: pointer;
     text-decoration: none;
-
-    // debug
-    color: black;
 }
 
 h1, h2, h3 {
@@ -32,6 +27,7 @@ h1, h2, h3 {
 }
 
 .container {
+    font-family: fo.$font-opensans;
     text-align: center;
     color: c.$veryDarkCyan;
 }
@@ -48,31 +44,85 @@ button {
     }
 }
 
+.hero {
 
-.hero {    
+    .cta {
+
+        @include m.breakpoint-up(xlarge) {
+            text-align: left;
+        }
+    }
 
     .headline {
         // font-size: fo.$size-xlg; // h1
         font-size: var(--mb-h1); // h1
         line-height: 1.5em;
+
+        @include m.breakpoint-up(xxlarge) {
+            font-size: fo.$size-xxlg;
+        }
+
+        @include m.breakpoint-up(xxxlarge) {
+            font-size: fo.$size-xxxlg;
+        }
+
+        @include m.breakpoint-up(xxxxxlarge) {
+            font-size: fo.$size-xxxxlg;
+        }
+
+        @include m.breakpoint-up(xxxxxxlarge) {
+            font-size: fo.$size-xxxxxlg;
+        }
     }
 
     .para {
         font-size: fo.$size-xsm;
         line-height: 1.6em;
+
+        @include m.breakpoint-up(xxxxxlarge) {
+            font-size: fo.$size-sm;
+        }
     }
 }
 
 .feature {
 
+    @include m.breakpoint-up(xxmedium) {
+        text-align: left;
+    }
+
     .headline {
         font-size: var(--mb-h2); // h2
+
+        @include m.breakpoint-up(xxlarge) {
+            font-size: fo.$size-xlg;
+        }
+
+        @include m.breakpoint-up(xxxxxlarge) {
+            font-size: fo.$size-xxlg;
+        }
+
+        @include m.breakpoint-up(xxxxxxlarge) {
+            font-size: fo.$size-xxxlg;
+        }
     }
 
     .para {
         font-size: fo.$size-xsm;
         line-height: 1.6em;
         color: c.$grayishBlue;
+
+        @include m.breakpoint-up(xxmedium) {
+            font-size: fo.$size-xxsm;
+        }
+
+        @include m.breakpoint-up(large) {
+            font-size: fo.$size-xsm;
+        }
+
+        @include m.breakpoint-up(xxxxxlarge) {
+            font-size: fo.$size-sm;
+        }
     }
 }
 
@@ -80,6 +130,14 @@ button {
 
     .headline {
         font-size: var(--mb-h3); // h3
+
+        @include m.breakpoint-up(xxlarge) {
+            font-size: fo.$size-lg;
+        }
+
+        @include m.breakpoint-up(xxxlarge) {
+            font-size: fo.$size-xlg;
+        }
     }
 }
 
@@ -91,13 +149,24 @@ button {
 
 ul {
 
-    a{
+    li {
+
+        @include m.breakpoint-up(small) {
+            text-align: center;
+        }
+
+        @include m.breakpoint-up(large) {
+            text-align: left;
+        }
+    }
+    a {
         color: white;
     }    
 }
 
 .copyright {
     text-align: center;
+    font-size: fo.$size-xxsm;
 }
 
 .tooltip {
